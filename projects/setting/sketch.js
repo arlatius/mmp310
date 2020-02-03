@@ -1,6 +1,6 @@
 /*
-	characters sketch 
-	1/27/2020
+	setting sketch 
+	2/3/2020
 
 	credits:
 	sprites ripped from spriters-resource.com/nintendo_switch/fireemblemthreehouses/
@@ -9,6 +9,9 @@
     
     slideshow code taken from my own presentation last semester
     https://github.com/arlatius/mmp210/blob/master/Projects/finalPresentation/sketch.js
+
+    school png
+    http://clipart-library.com/clipart/yckKnpbxi.htm
 */
 
 var slideNumber = 0;
@@ -25,7 +28,7 @@ var prevBtnH = 50;
 
 //loading graphics
 
-var claude, claudeRight, dimitri, youngDimitri, byleth, edelgard;
+var claude, claudeRight, dimitri, youngDimitri, byleth, edelgard, blackboard, school;
 
 //runs before setup, when preload is done setup gets called
 function preload(){
@@ -36,6 +39,8 @@ function preload(){
 	byleth = loadImage('images/Byleth.png')
 	edelgard = loadImage('images/Edelgard.png')
 	claudeRight = loadImage('images/ClaudeRight.png')
+	blackboard = loadImage('images/Blackboard.png')
+	school = loadImage('images/School.png')
 }
 
 //location variables
@@ -47,18 +52,45 @@ var dimitriY = 200;
 var youngDimitriX = 350;
 var youngDimitriY = 650;
 
-var story1 = "Your opinion doesn't matter in elementary school either."
-var story2 = "It matters in college. College is just your opinion."
-var story3 = "Just you raising your hand and being like,"
-var story4 = "I think Emily Dickinson's a lesbian."
-var story5 = "And they're like, 'Partial credit.' And thats a whole thing."
+var story1 = "Your opinion doesn't matter in elementary school either.";
+var story2 = "It matters in college. College is just your opinion.";
+var story3 = "Just you raising your hand and being like,";
+var story4 = "I think Emily Dickinson's a lesbian.";
+var story5 = "And they're like, 'Partial credit.' And thats a whole thing.";
+
+//elementary school, college, classroom
+var currentSetting = "classroom";
 
 
 function setup() {
-	createCanvas(windowWidth, 1150);
+	createCanvas(1960, 1150);
 }
 function draw(){
-	background('lightblue');
+
+	//conditional statement
+	imageMode(CENTER);
+	if(currentSetting == "elementary") {
+		background('lightblue');
+		fill('green');
+		rect(0, height * 2/3, width, height * 1/3);
+		image(school,width/2,height/2,700,700);
+	} else if (currentSetting == "college") {
+		background('lightblue');
+		fill('green');
+		rect(0, height * 2/3, width, height * 1/3);
+		fill('grey');
+		rect(width/2,height/2,700,700);
+	} else if (currentSetting == "classroom") {
+		background('#8D5725');
+		fill('#653910');
+		rect(0, height * 2/3, width, height * 1/3);
+		image(blackboard,width/2,height/2);
+	}
+
+
+
+
+
 /* TEST
 
 	image(claude, claudeX, claudeY);
@@ -69,6 +101,10 @@ function draw(){
 	*/
 
 	//narration: text('string', X position, Y position, width, height)
+fill('black');
+stroke('white');
+strokeWeight(4);
+imageMode(CORNER);
 
 if (slideNumber == 0){
 	image(youngDimitri, youngDimitriX, youngDimitriY);
