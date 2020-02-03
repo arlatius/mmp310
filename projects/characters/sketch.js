@@ -6,13 +6,16 @@
 	sprites ripped from spriters-resource.com/nintendo_switch/fireemblemthreehouses/
 
 	narration by john mulaney
+    
+    slideshow code taken from my own presentation last semester
+    https://github.com/arlatius/mmp210/blob/master/Projects/finalPresentation/sketch.js
 */
 
 var slideNumber = 0;
 var totalSlides = 5;
 
-var nextBtnX = 700;
-var nextBtnY = 500;
+var nextBtnX = 100;
+var nextBtnY = 200;
 var nextBtnSize = 50;
 
 var prevBtnX = 100;
@@ -52,7 +55,7 @@ var story5 = "And they're like, 'Partial credit.' And thats a whole thing."
 
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	createCanvas(windowWidth, 1150);
 }
 function draw(){
 	background('lightblue');
@@ -102,7 +105,7 @@ if (slideNumber == 0){
 
 	textSize(20);
 	textAlign(CENTER,CENTER);
-	text('Emily Dickinson', width/2 + 120, 700);
+	text('"Emily Dickinson"', width/2 + 120, 700);
 
 } else if (slideNumber == 4){
 		image(claudeRight, dimitriX, dimitriY);
