@@ -59,7 +59,7 @@ var story4 = "I think Emily Dickinson's a lesbian.";
 var story5 = "And they're like, 'Partial credit.' And thats a whole thing.";
 
 //elementary school, college, classroom
-var currentSetting = "classroom";
+var currentSetting = "elementary";
 
 
 function setup() {
@@ -106,7 +106,9 @@ stroke('white');
 strokeWeight(4);
 imageMode(CORNER);
 
-if (slideNumber == 0){
+if (slideNumber == 0 ){
+	currentSetting = "elementary"
+	
 	image(youngDimitri, youngDimitriX, youngDimitriY);
 	image(claude, claudeX, claudeY);
 
@@ -115,6 +117,7 @@ if (slideNumber == 0){
 	text(story1, width/2, 100);
 
 } else if (slideNumber == 1){
+	currentSetting = "college";
 	image(dimitri, dimitriX, dimitriY);
 	image(claude, claudeX, claudeY);
 
@@ -123,12 +126,15 @@ if (slideNumber == 0){
 	text(story2, width/2, 100);
 
 } else if (slideNumber == 2){
+
 	image(claudeRight, dimitriX, dimitriY);
 	image(byleth, claudeX, claudeY);
 
 	textSize(50);
 	textAlign(CENTER,CENTER);
 	text(story3, width/2, 100);
+
+	currentSetting = "classroom";
 
 } else if (slideNumber == 3){
 	image(edelgard, dimitriX + 200, dimitriY);
