@@ -43,9 +43,9 @@ function preload(){
 	school = loadImage('images/School.png')
 }
 
-//location variables
+//location variables 
 
-var claudeX = 1000;
+var claudeX = 1000; 
 var claudeY = 200;
 var dimitriX = 100;
 var dimitriY = 200;
@@ -96,20 +96,27 @@ function classroom(){
 	rect(0, height * 2/3, width, height * 1/3);
 	image(blackboard,width/2,height/2);
 }
+function nextbtn(){
+	fill(255);
+    noStroke();
+    ellipse(nextBtnX, nextBtnY, nextBtnSize);
+    fill(0);
+    textSize(20);
+    textAlign(CENTER, CENTER);
+    text("Next", nextBtnX, nextBtnY);
+}
+function prevbtn(){
+	fill(255);
+    noStroke();
+    rect(prevBtnX, prevBtnY, prevBtnW, prevBtnH);
+    fill(0);
+    textSize(20);
+    textAlign(LEFT, TOP);
+    text("Previous", prevBtnX + 10, prevBtnY + 10);
+}
 
+//narration: text('string', X position, Y position, width, height)
 
-
-
-/* TEST
-
-	image(claude, claudeX, claudeY);
-	image(dimitri, dimitriX, dimitriY);
-	image(youngDimitri, youngDimitriX, youngDimitriY);
-	image(byleth, dimitriX, dimitriY);
-	image(edelgard, dimitriX, dimitriY);
-	*/
-
-	//narration: text('string', X position, Y position, width, height)
 fill('black');
 stroke('white');
 strokeWeight(4);
@@ -167,28 +174,12 @@ if (slideNumber == 0 ){
 	text(story5, width/2, 100);
 }
 
-
- // next btn
-  if (slideNumber < totalSlides - 1) {
-    fill(255);
-    noStroke();
-    ellipse(nextBtnX, nextBtnY, nextBtnSize);
-    fill(0);
-    textSize(20);
-    textAlign(CENTER, CENTER);
-    text("Next", nextBtnX, nextBtnY);
+if (slideNumber < totalSlides - 1) {
+    nextbtn();
   }
 
-
-  // prev btn
-  if (slideNumber > 0) {
-    fill(255);
-    noStroke();
-    rect(prevBtnX, prevBtnY, prevBtnW, prevBtnH);
-    fill(0);
-    textSize(20);
-    textAlign(LEFT, TOP);
-    text("Previous", prevBtnX + 10, prevBtnY + 10);
+if (slideNumber > 0) {
+    prevbtn();
   }
 
 	
@@ -211,3 +202,17 @@ function mousePressed() {
     slideNumber--;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
