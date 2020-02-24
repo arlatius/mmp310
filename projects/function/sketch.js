@@ -68,6 +68,19 @@ function claudeRight(x, y) {
 	image(claudeRightImg, x, y);
 }
 
+function dimitri(x, y) {
+	image(dimitriImg, x, y);
+}
+function youngDimitri(x, y) {
+	image(youngDimitriImg, x, y);
+}
+function byleth(x, y) {
+	image(bylethImg, x, y);
+}
+function edelgard(x, y) {
+	image(edelgardImg, x, y);
+}
+
 function setup() {
 	createCanvas(1960, 1150);
 }
@@ -130,8 +143,8 @@ imageMode(CORNER);
 
 if (slideNumber == 0 ){
 	currentSetting = "elementary"
-	
-	image(youngDimitriImg, youngDimitriX, youngDimitriY);
+	youngDimitri(yuongDimitriX, youngDimitriY);
+	//image(youngDimitriImg, youngDimitriX, youngDimitriY);
 	claude(claudeX,claudeY);
 
 	textSize(50);
@@ -140,8 +153,11 @@ if (slideNumber == 0 ){
 
 } else if (slideNumber == 1){
 	currentSetting = "college";
-	image(dimitriImg, dimitriX, dimitriY);
-	image(claudeImg, claudeX, claudeY);
+
+	dimitri(dimitriX,dimitriY);
+	//image(dimitriImg, dimitriX, dimitriY);
+	claude(claudeX,claudeY);
+	//image(claudeImg, claudeX, claudeY);
 
 	textSize(50);
 	textAlign(CENTER,CENTER);
@@ -150,7 +166,8 @@ if (slideNumber == 0 ){
 } else if (slideNumber == 2){
 
 	claudeRight(dimitriX,dimitriY);
-	image(bylethImg, claudeX, claudeY);
+	byleth(claudeX,claudeY);
+	//image(bylethImg, claudeX, claudeY);
 
 	textSize(50);
 	textAlign(CENTER,CENTER);
@@ -159,9 +176,11 @@ if (slideNumber == 0 ){
 	currentSetting = "classroom";
 
 } else if (slideNumber == 3){
-	image(edelgardImg, dimitriX + 200, dimitriY);
+	edelgard(dimitriX+200,dimitriY);
+	//image(edelgardImg, dimitriX + 200, dimitriY);
 	claudeRight(dimitriX,dimitriY);
-	image(bylethImg, claudeX, claudeY);
+	byleth(claudeX,claudeY);
+	//image(bylethImg, claudeX, claudeY);
 
 	textSize(50);
 	textAlign(CENTER,CENTER);
@@ -173,7 +192,8 @@ if (slideNumber == 0 ){
 
 } else if (slideNumber == 4){
 	claudeRight(dimitriX,dimitriY);
-	image(bylethImg, claudeX, claudeY);
+	byleth(claudeX,claudeY);
+	//image(bylethImg, claudeX, claudeY);
 
 	textSize(50);
 	textAlign(CENTER,CENTER);
