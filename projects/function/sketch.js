@@ -52,14 +52,22 @@ var dimitriY = 200;
 var youngDimitriX = 350;
 var youngDimitriY = 650;
 
-var story1 = "Your opinion doesn't matter in elementary school either.";
-var story2 = "It matters in college. College is just your opinion.";
-var story3 = "Just you raising your hand and being like,";
-var story4 = "I think Emily Dickinson's a lesbian.";
-var story5 = "And they're like, 'Partial credit.' And thats a whole thing.";
+//var story1 = "Your opinion doesn't matter in elementary school either.";
+//var story2 = "It matters in college. College is just your opinion.";
+//var story3 = "Just you raising your hand and being like,";
+//var story4 = "I think Emily Dickinson's a lesbian.";
+//var story5 = "And they're like, 'Partial credit.' And thats a whole thing.";
 
 //elementary school, college, classroom
 var currentSetting = "elementary";
+
+function narration(story) {
+	fill('black');
+	stroke('white');
+	strokeWeight(4);
+	textSize(50);
+	textAlign(CENTER,CENTER);
+}
 
 function claude(x, y) {
 	image(claudeImg, x, y);
@@ -136,9 +144,7 @@ function prevbtn(){
 
 //narration: text('string', X position, Y position, width, height)
 
-fill('black');
-stroke('white');
-strokeWeight(4);
+
 imageMode(CORNER);
 
 if (slideNumber == 0 ){
@@ -147,9 +153,7 @@ if (slideNumber == 0 ){
 	//image(youngDimitriImg, youngDimitriX, youngDimitriY);
 	claude(claudeX,claudeY);
 
-	textSize(50);
-	textAlign(CENTER,CENTER);
-	text(story1, width/2, 100);
+	narration("Your opinion doesn't matter in elementary school either.");
 
 } else if (slideNumber == 1){
 	currentSetting = "college";
@@ -159,9 +163,7 @@ if (slideNumber == 0 ){
 	claude(claudeX,claudeY);
 	//image(claudeImg, claudeX, claudeY);
 
-	textSize(50);
-	textAlign(CENTER,CENTER);
-	text(story2, width/2, 100);
+	narration("It matters in college. College is just your opinion.");
 
 } else if (slideNumber == 2){
 
@@ -169,9 +171,7 @@ if (slideNumber == 0 ){
 	byleth(claudeX,claudeY);
 	//image(bylethImg, claudeX, claudeY);
 
-	textSize(50);
-	textAlign(CENTER,CENTER);
-	text(story3, width/2, 100);
+	narration("Just you raising your hand and being like,");
 
 	currentSetting = "classroom";
 
@@ -182,9 +182,7 @@ if (slideNumber == 0 ){
 	byleth(claudeX,claudeY);
 	//image(bylethImg, claudeX, claudeY);
 
-	textSize(50);
-	textAlign(CENTER,CENTER);
-	text(story4, width/2, 100);
+	narration("I think Emily Dickinson's a lesbian.");
 
 	textSize(20);
 	textAlign(CENTER,CENTER);
@@ -195,9 +193,7 @@ if (slideNumber == 0 ){
 	byleth(claudeX,claudeY);
 	//image(bylethImg, claudeX, claudeY);
 
-	textSize(50);
-	textAlign(CENTER,CENTER);
-	text(story5, width/2, 100);
+	narration("And they're like, 'Partial credit.' And thats a whole thing.");
 }
 
 if (slideNumber < totalSlides - 1) {
