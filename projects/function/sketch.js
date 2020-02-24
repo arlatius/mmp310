@@ -26,11 +26,17 @@ var prevBtnY = 500;
 var prevBtnW = 100;
 var prevBtnH = 50;
 
-//loading graphics
-
 var claudeImg, claudeRightImg, dimitriImg, youngDimitriImg, bylethImg, edelgardImg, blackboard, school;
 
-//runs before setup, when preload is done setup gets called
+//location variables 
+
+var claudeX = 1000; 
+var claudeY = 200;
+var dimitriX = 100;
+var dimitriY = 200;
+var youngDimitriX = 350;
+var youngDimitriY = 650;
+
 function preload(){
 
 	claudeImg = loadImage('images/Claude.png')
@@ -43,14 +49,6 @@ function preload(){
 	school = loadImage('images/School.png')
 }
 
-//location variables 
-
-var claudeX = 1000; 
-var claudeY = 200;
-var dimitriX = 100;
-var dimitriY = 200;
-var youngDimitriX = 350;
-var youngDimitriY = 650;
 
 //var story1 = "Your opinion doesn't matter in elementary school either.";
 //var story2 = "It matters in college. College is just your opinion.";
@@ -59,12 +57,10 @@ var youngDimitriY = 650;
 //var story5 = "And they're like, 'Partial credit.' And thats a whole thing.";
 
 //elementary school, college, classroom
-var currentSetting = "elementary";
-
-
 
 function setup() {
 	createCanvas(1960, 1150);
+	imageMode(CENTER);
 }
 function draw(){
 
@@ -206,7 +202,7 @@ function narration(story) {
 	strokeWeight(4);
 	textSize(50);
 	textAlign(CENTER,CENTER);
-	text(story, width/4, 20, width/2);
+	text(story, width/4, 50, width/2);
 }
 
 function claude(x, y) {
