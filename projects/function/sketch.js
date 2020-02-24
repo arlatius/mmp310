@@ -64,6 +64,9 @@ var currentSetting = "elementary";
 function claude(x, y) {
 	image(claudeImg, x, y);
 }
+function claudeRight(x, y) {
+	image(claudeRightImg, x, y);
+}
 
 function setup() {
 	createCanvas(1960, 1150);
@@ -146,7 +149,7 @@ if (slideNumber == 0 ){
 
 } else if (slideNumber == 2){
 
-	image(claudeRightImg, dimitriX, dimitriY);
+	claudeRight(dimitriX,dimitriY);
 	image(bylethImg, claudeX, claudeY);
 
 	textSize(50);
@@ -157,7 +160,7 @@ if (slideNumber == 0 ){
 
 } else if (slideNumber == 3){
 	image(edelgardImg, dimitriX + 200, dimitriY);
-	image(claudeRightImg, dimitriX, dimitriY);
+	claudeRight(dimitriX,dimitriY);
 	image(bylethImg, claudeX, claudeY);
 
 	textSize(50);
@@ -169,7 +172,7 @@ if (slideNumber == 0 ){
 	text('"Emily Dickinson"', width/2 + 120, 700);
 
 } else if (slideNumber == 4){
-	image(claudeRightImg, dimitriX, dimitriY);
+	claudeRight(dimitriX,dimitriY);
 	image(bylethImg, claudeX, claudeY);
 
 	textSize(50);
