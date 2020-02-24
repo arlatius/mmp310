@@ -28,17 +28,17 @@ var prevBtnH = 50;
 
 //loading graphics
 
-var claude, claudeRight, dimitri, youngDimitri, byleth, edelgard, blackboard, school;
+var claudeImg, claudeRightImg, dimitriImg, youngDimitriImg, bylethImg, edelgardImg, blackboard, school;
 
 //runs before setup, when preload is done setup gets called
 function preload(){
 
-	claude = loadImage('images/Claude.png')
-	dimitri = loadImage('images/Dimitri.png')
-	youngDimitri = loadImage('images/YoungDimitri.png')
-	byleth = loadImage('images/Byleth.png')
-	edelgard = loadImage('images/Edelgard.png')
-	claudeRight = loadImage('images/ClaudeRight.png')
+	claudeImg = loadImage('images/Claude.png')
+	dimitriImg = loadImage('images/Dimitri.png')
+	youngDimitriImg = loadImage('images/YoungDimitri.png')
+	bylethImg = loadImage('images/Byleth.png')
+	edelgardImg = loadImage('images/Edelgard.png')
+	claudeRightImg = loadImage('images/ClaudeRight.png')
 	blackboard = loadImage('images/Blackboard.png')
 	school = loadImage('images/School.png')
 }
@@ -61,6 +61,9 @@ var story5 = "And they're like, 'Partial credit.' And thats a whole thing.";
 //elementary school, college, classroom
 var currentSetting = "elementary";
 
+function claude(x, y) {
+	image(claudeImg, x, y);
+}
 
 function setup() {
 	createCanvas(1960, 1150);
@@ -125,8 +128,8 @@ imageMode(CORNER);
 if (slideNumber == 0 ){
 	currentSetting = "elementary"
 	
-	image(youngDimitri, youngDimitriX, youngDimitriY);
-	image(claude, claudeX, claudeY);
+	image(youngDimitriImg, youngDimitriX, youngDimitriY);
+	claude(claudeX,claudeY);
 
 	textSize(50);
 	textAlign(CENTER,CENTER);
@@ -134,8 +137,8 @@ if (slideNumber == 0 ){
 
 } else if (slideNumber == 1){
 	currentSetting = "college";
-	image(dimitri, dimitriX, dimitriY);
-	image(claude, claudeX, claudeY);
+	image(dimitriImg, dimitriX, dimitriY);
+	image(claudeImg, claudeX, claudeY);
 
 	textSize(50);
 	textAlign(CENTER,CENTER);
@@ -143,8 +146,8 @@ if (slideNumber == 0 ){
 
 } else if (slideNumber == 2){
 
-	image(claudeRight, dimitriX, dimitriY);
-	image(byleth, claudeX, claudeY);
+	image(claudeRightImg, dimitriX, dimitriY);
+	image(bylethImg, claudeX, claudeY);
 
 	textSize(50);
 	textAlign(CENTER,CENTER);
@@ -153,9 +156,9 @@ if (slideNumber == 0 ){
 	currentSetting = "classroom";
 
 } else if (slideNumber == 3){
-	image(edelgard, dimitriX + 200, dimitriY);
-	image(claudeRight, dimitriX, dimitriY);
-	image(byleth, claudeX, claudeY);
+	image(edelgardImg, dimitriX + 200, dimitriY);
+	image(claudeRightImg, dimitriX, dimitriY);
+	image(bylethImg, claudeX, claudeY);
 
 	textSize(50);
 	textAlign(CENTER,CENTER);
@@ -166,8 +169,8 @@ if (slideNumber == 0 ){
 	text('"Emily Dickinson"', width/2 + 120, 700);
 
 } else if (slideNumber == 4){
-	image(claudeRight, dimitriX, dimitriY);
-	image(byleth, claudeX, claudeY);
+	image(claudeRightImg, dimitriX, dimitriY);
+	image(bylethImg, claudeX, claudeY);
 
 	textSize(50);
 	textAlign(CENTER,CENTER);
