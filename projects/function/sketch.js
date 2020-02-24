@@ -122,7 +122,7 @@ function prevbtn(){
 imageMode(CORNER);
 
 if (slideNumber == 0 ){
-	currentSetting = "elementary"
+	elementary();
 	youngDimitri(350, 650);
 	//image(youngDimitriImg, youngDimitriX, youngDimitriY);
 	claude(claudeX,claudeY);
@@ -130,7 +130,7 @@ if (slideNumber == 0 ){
 	narration("Your opinion doesn't matter in elementary school either.");
 
 } else if (slideNumber == 1){
-	currentSetting = "college";
+	college();
 
 	dimitri(dimitriX,dimitriY);
 	//image(dimitriImg, dimitriX, dimitriY);
@@ -147,7 +147,7 @@ if (slideNumber == 0 ){
 
 	narration("Just you raising your hand and being like,");
 
-	currentSetting = "classroom";
+	classroom();
 
 } else if (slideNumber == 3){
 	edelgard(dimitriX+200,dimitriY);
