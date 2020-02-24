@@ -149,7 +149,7 @@ imageMode(CORNER);
 
 if (slideNumber == 0 ){
 	currentSetting = "elementary"
-	youngDimitri(yuongDimitriX, youngDimitriY);
+	youngDimitri(youngDimitriX, youngDimitriY);
 	//image(youngDimitriImg, youngDimitriX, youngDimitriY);
 	claude(claudeX,claudeY);
 
