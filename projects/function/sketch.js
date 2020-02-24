@@ -61,33 +61,7 @@ var youngDimitriY = 650;
 //elementary school, college, classroom
 var currentSetting = "elementary";
 
-function narration(story) {
-	fill('black');
-	stroke('white');
-	strokeWeight(4);
-	textSize(50);
-	textAlign(CENTER,CENTER);
-}
 
-function claude(x, y) {
-	image(claudeImg, x, y);
-}
-function claudeRight(x, y) {
-	image(claudeRightImg, x, y);
-}
-
-function dimitri(x, y) {
-	image(dimitriImg, x, y);
-}
-function youngDimitri(x, y) {
-	image(youngDimitriImg, x, y);
-}
-function byleth(x, y) {
-	image(bylethImg, x, y);
-}
-function edelgard(x, y) {
-	image(edelgardImg, x, y);
-}
 
 function setup() {
 	createCanvas(1960, 1150);
@@ -149,7 +123,7 @@ imageMode(CORNER);
 
 if (slideNumber == 0 ){
 	currentSetting = "elementary"
-	youngDimitri(youngDimitriX, youngDimitriY);
+	youngDimitri(350, 650);
 	//image(youngDimitriImg, youngDimitriX, youngDimitriY);
 	claude(claudeX,claudeY);
 
@@ -225,7 +199,33 @@ function mousePressed() {
   }
 }
 
+function narration(story) {
+	fill('black');
+	stroke('white');
+	strokeWeight(4);
+	textSize(50);
+	textAlign(CENTER,CENTER);
+}
 
+function claude(x, y) {
+	image(claudeImg, x, y);
+}
+function claudeRight(x, y) {
+	image(claudeRightImg, x, y);
+}
+
+function dimitri(x, y) {
+	image(dimitriImg, x, y);
+}
+function youngDimitri(x, y) {
+	image(youngDimitriImg, x, y);
+}
+function byleth(x, y) {
+	image(bylethImg, x, y);
+}
+function edelgard(x, y) {
+	image(edelgardImg, x, y);
+}
 
 
 
