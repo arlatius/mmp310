@@ -26,16 +26,14 @@ var prevBtnY = 500;
 var prevBtnW = 100;
 var prevBtnH = 50;
 
-var claudeImg, claudeRightImg, dimitriImg, youngDimitriImg, bylethImg, edelgardImg, blackboard, school;
-
-//location variables 
-
 var claudeX = 1000; 
 var claudeY = 200;
 var dimitriX = 100;
 var dimitriY = 200;
 var youngDimitriX = 350;
 var youngDimitriY = 650;
+
+var claudeImg, claudeRightImg, dimitriImg, youngDimitriImg, bylethImg, edelgardImg, blackboard, school;
 
 function preload(){
 
@@ -47,20 +45,16 @@ function preload(){
 	claudeRightImg = loadImage('images/ClaudeRight.png')
 	blackboard = loadImage('images/Blackboard.png')
 	school = loadImage('images/School.png')
-}
+} 
 
 
-//var story1 = "Your opinion doesn't matter in elementary school either.";
-//var story2 = "It matters in college. College is just your opinion.";
-//var story3 = "Just you raising your hand and being like,";
-//var story4 = "I think Emily Dickinson's a lesbian.";
-//var story5 = "And they're like, 'Partial credit.' And thats a whole thing.";
 
-//elementary school, college, classroom
+var currentSetting = "elementary";
+
+
 
 function setup() {
 	createCanvas(1960, 1150);
-	imageMode(CENTER);
 }
 function draw(){
 
@@ -111,8 +105,6 @@ function prevbtn(){
     textAlign(LEFT, TOP);
     text("Previous", prevBtnX + 10, prevBtnY + 10);
 }
-
-
 
 
 if (slideNumber == 0 ){
