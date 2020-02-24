@@ -116,15 +116,14 @@ function prevbtn(){
     text("Previous", prevBtnX + 10, prevBtnY + 10);
 }
 
-//narration: text('string', X position, Y position, width, height)
 
 
-imageMode(CORNER);
 
 if (slideNumber == 0 ){
 	elementary();
+
+	imageMode(CORNER);
 	youngDimitri(350, 650);
-	//image(youngDimitriImg, youngDimitriX, youngDimitriY);
 	claude(claudeX,claudeY);
 
 	narration("Your opinion doesn't matter in elementary school either.");
@@ -132,29 +131,30 @@ if (slideNumber == 0 ){
 } else if (slideNumber == 1){
 	college();
 
+    imageMode(CORNER);
 	dimitri(dimitriX,dimitriY);
-	//image(dimitriImg, dimitriX, dimitriY);
 	claude(claudeX,claudeY);
-	//image(claudeImg, claudeX, claudeY);
 
 	narration("It matters in college. College is just your opinion.");
 
 } else if (slideNumber == 2){
+	classroom();
 
+	imageMode(CORNER);
 	claudeRight(dimitriX,dimitriY);
 	byleth(claudeX,claudeY);
-	//image(bylethImg, claudeX, claudeY);
 
 	narration("Just you raising your hand and being like,");
 
-	classroom();
+	
 
 } else if (slideNumber == 3){
+	classroom();
+	
+	imageMode(CORNER);
 	edelgard(dimitriX+200,dimitriY);
-	//image(edelgardImg, dimitriX + 200, dimitriY);
 	claudeRight(dimitriX,dimitriY);
 	byleth(claudeX,claudeY);
-	//image(bylethImg, claudeX, claudeY);
 
 	narration("I think Emily Dickinson's a lesbian.");
 
@@ -163,9 +163,10 @@ if (slideNumber == 0 ){
 	text('"Emily Dickinson"', width/2 + 120, 700);
 
 } else if (slideNumber == 4){
+	classroom();
+	imageMode(CORNER);
 	claudeRight(dimitriX,dimitriY);
 	byleth(claudeX,claudeY);
-	//image(bylethImg, claudeX, claudeY);
 
 	narration("And they're like, 'Partial credit.' And thats a whole thing.");
 }
@@ -205,6 +206,7 @@ function narration(story) {
 	strokeWeight(4);
 	textSize(50);
 	textAlign(CENTER,CENTER);
+	text(story, width/4, 20, width/2);
 }
 
 function claude(x, y) {
