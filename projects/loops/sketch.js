@@ -4,10 +4,10 @@
 */
 
 
-var cloud, boy, tile
+var smoke, boy, tile
 
 function preload() {
-	cloud = loadImage('images/cloud.png');
+	smoke = loadImage('images/smoke.png');
 	boy = loadImage('images/boy.png');
 	tile = loadImage('images/tile.png');
 	station = loadImage('images/station.png');
@@ -15,9 +15,6 @@ function preload() {
 
 function setup() {
   createCanvas(800, 500);
-}
-
-function draw() {
 
 //bg colors
   background('lightblue');
@@ -28,10 +25,7 @@ function draw() {
 
  //images
 
-//cloud loop
- 	for (let x = -32; x <= width; x +=200){
- 		image(cloud,x,100);
- 	}
+ 
 
  //tile loop
  	for (let x = -32; x<= width; x += 32){
@@ -46,7 +40,12 @@ function draw() {
  		image(station, x, 128);
  	}
 
- 	
+ //cloud loop
+ 	for (let x = -500; x <= width; x +=200){
+ 		let offset = random(-50,50);
+ 		let y = random(250, 350);
+ 		image(smoke,x + offset,y);
+ 	}	
 
 
 }
