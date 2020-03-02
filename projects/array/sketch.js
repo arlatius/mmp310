@@ -21,6 +21,8 @@ var cloudX = []; //empty array
 var cloudY = [];
 var numClouds = 5;
 var ratX = [];
+var stainX = [];
+var stainY = [];
 
 function setup() {
   createCanvas(800, 500);
@@ -30,6 +32,8 @@ function setup() {
   	let x = -50;
   	cloudX.push( random(width) );
   	cloudY.push(random(250,350));
+  	stainX.push(random(width));
+  	stainY.push(random(height));
   	ratX.push(random(width));
 
   	//update x, distributing number of clouds across canvas
@@ -74,6 +78,13 @@ function draw(){
  	for (let x = 32; x <= width + 500; x += 320){
  		image(station, x, 128);
  	}
+
+  //stain loop
+ 	for (let i = 0; i<5; i++){
+ image(stain, stainX[i], stainY[i]);
+ 	}
+
+
 image(brownRat, 100, 455);
 image(greyRat, 250, 455);
 //rats
@@ -100,12 +111,7 @@ for(let i = 0; i < 2; i++){
 
 
 }
-  //stain loop
- 	for (let x = -50; x<= width; x+=200){
- 		let offset = random(-50,50);
- 		let y = random(height);
- 		image(stain,x+offset,y);
- 	}
+
 
 
 
