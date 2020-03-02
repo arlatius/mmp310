@@ -4,7 +4,7 @@
 */
 
 
-var smoke, boy, tile, station, stain
+var smoke, boy, tile, station, stain, brownRat, greyRat
 
 function preload() {
 	smoke = loadImage('images/smoke.png');
@@ -12,12 +12,15 @@ function preload() {
 	tile = loadImage('images/tile.png');
 	station = loadImage('images/station.png');
 	stain = loadImage('images/stain.png');
+	brownRat = loadImage('images/brownRat.png');
+	greyRat = loadImage('images/greyRat.png');
 }
 
 //position variables for images
 var cloudX = []; //empty array
 var cloudY = [];
 var numClouds = 5;
+var ratX = [];
 
 function setup() {
   createCanvas(800, 500);
@@ -27,6 +30,7 @@ function setup() {
   	let x = -50;
   	cloudX.push( random(width) );
   	cloudY.push(random(250,350));
+  	ratX.push(random(width));
 
   	//update x, distributing number of clouds across canvas
   	x += width/numClouds
@@ -70,6 +74,16 @@ function draw(){
  	for (let x = 32; x <= width + 500; x += 320){
  		image(station, x, 128);
  	}
+image(brownRat, 100, 455);
+image(greyRat, 250, 455);
+//rats
+for(let i = 0; i < 2; i++){
+	image(brownRat,ratX[i],455);
+	ratX[i] += 3;
+	if(ratX[i] > width) {
+		ratX[i] = -brownRat.width
+	}
+}
 
 
 //clouds
@@ -83,6 +97,7 @@ function draw(){
  			cloudX[i] = -smoke.width
  		}
  	}
+
 
 }
   //stain loop
