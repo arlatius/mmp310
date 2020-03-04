@@ -21,8 +21,10 @@ var cloudX = []; //empty array
 var cloudY = [];
 var numClouds = 5;
 var ratX = [];
+var ratSpeed =[];
 var stainX = [];
 var stainY = [];
+var cloudSpeed = [];
 
 function setup() {
   createCanvas(800, 500);
@@ -32,9 +34,11 @@ function setup() {
   	let x = -50;
   	cloudX.push( random(width) );
   	cloudY.push(random(250,350));
+  	cloudSpeed.push(random(1,2));
   	stainX.push(random(width));
   	stainY.push(random(height));
   	ratX.push(random(width));
+  	ratSpeed.push(random(2,3));
 
   	//update x, distributing number of clouds across canvas
   	x += width/numClouds
@@ -88,9 +92,9 @@ function draw(){
 image(brownRat, 100, 455);
 image(greyRat, 250, 455);
 //rats
-for(let i = 0; i < 2; i++){
+for(let i = 0; i < 3; i++){
 	image(brownRat,ratX[i],455);
-	ratX[i] += 3;
+	ratX[i] += ratSpeed[i] +random(1,2);
 	if(ratX[i] > width) {
 		ratX[i] = -brownRat.width
 	}
@@ -102,7 +106,7 @@ for(let i = 0; i < 2; i++){
  		image(smoke, cloudX[i], cloudY[i]);
 
  		//animate x
- 		cloudX[i] += 1;
+ 		cloudX[i] += cloudSpeed[i] + random(-0.5, 0.5);
 
  		if (cloudX[i] > width) {
  			cloudX[i] = -smoke.width
