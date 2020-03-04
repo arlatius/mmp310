@@ -117,5 +117,8 @@ for(let i = 0; i < 3; i++){
 }
 
 
+//im not sure what else i should do rn 3/4/20
+
+
 
 
