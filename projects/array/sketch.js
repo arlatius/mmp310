@@ -4,7 +4,7 @@
 */
 
 
-var smoke, boy, tile, station, stain, brownRat, greyRat
+var smoke, boy, tile, station, stain, brownRat, greyRat, grime
 
 function preload() {
 	smoke = loadImage('images/smoke.png');
@@ -14,6 +14,7 @@ function preload() {
 	stain = loadImage('images/stain.png');
 	brownRat = loadImage('images/brownRat.png');
 	greyRat = loadImage('images/greyRat.png');
+	gime = loadImage('images/grime.png');
 }
 
 //position variables for images
@@ -77,6 +78,8 @@ function draw(){
  		image(tile,x,256);
  		image(tile,x,384);
  	}
+
+
 
  //station name loop
  	for (let x = 32; x <= width + 500; x += 320){
