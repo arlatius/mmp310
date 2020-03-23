@@ -37,7 +37,7 @@ function setup() {
     for (let i = 0; i < numSmoke; i++) {
         let x = random(width);
         let y = random(300, 400);
-        let smoke = new Thing(x, y, smokeImage);
+        let smoke = new Smoke(x, y, smokeImage);
         smokes.push(smoke);
     }
 
@@ -53,8 +53,8 @@ function setup() {
     //rats loop
     for (let i = 0; i < numRats; i++){
         let x = random(width);
-        let y = random(384, 588);
-        let rat = new Thing(x, y, brownRatImage);
+        let y = random(384, 500);
+        let rat = new Rat(x, y, brownRatImage);
         rats.push(rat);
     }
 }
@@ -96,10 +96,12 @@ function draw() {
     
     for (let i = 0; i < numRats; i++){
         rats[i].draw();
+        rats[i].update();
     }
 
     //draw smoke (loop from line 34)
     for (let i = 0; i < numSmoke; i++) {
         smokes[i].draw();
+        smokes[i].update();
     }
 }
